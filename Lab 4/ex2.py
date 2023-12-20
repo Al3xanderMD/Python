@@ -23,7 +23,6 @@ class Queue:
     def size(self):
         return len(self.items)
 
-# Example usage:
 if __name__ == "__main__":
     queue = Queue()
 

@@ -37,7 +37,7 @@ class Matrix:
     def apply(self, func):
         for i in range(self.rows):
             for j in range(self.cols):
-                self.data[i][j] = func(self.data[i][j])
+                self.data[i][j] = func(i, j)
 
     def __str__(self):
         return '\n'.join([' '.join(map(str, row)) for row in self.data])
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     print(transposed)
 
     identity = Matrix(3, 3)
-    identity.apply(lambda x: 1 if x % 4 == 0 else 0)
+    identity.apply(lambda i,j:1 if i == j else 0)
     print("Identity Matrix:")
     print(identity)
 
